@@ -29,6 +29,7 @@ def init():
 
 def send_notification(display_message):
     subprocess.check_call(['/usr/bin/osascript', '-e', 'display notification "' + display_message + '" with title "NFL ping test"'])
+    print display_message
 
 
 def source_list():
