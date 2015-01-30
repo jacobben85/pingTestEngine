@@ -29,7 +29,7 @@ def init():
 
 def send_notification(display_message):
     subprocess.check_call(['/usr/bin/osascript', '-e', 'display notification "' + display_message + '" with title "NFL ping test"'])
-    print display_message
+    print "[" + str(datetime.datetime.now()) + "]: " + display_message
 
 
 def source_list():
@@ -52,7 +52,7 @@ def source_list():
                 time_diff = utc_now - received
 
                 if int(time_diff.total_seconds() / 60) > 62:
-                    message = 'Schedule last updated at :' + last_update
+                    message = 'Schedule last updated at :' + last_update + ", UTC time now :" + str(utc_now)
 
                 for tournament in node.iter('tournament-stage'):
 
